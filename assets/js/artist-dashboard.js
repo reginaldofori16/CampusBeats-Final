@@ -15,29 +15,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Handle music upload
-    uploadForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(uploadForm);
-        formData.append('action', 'upload_music');
+    // uploadForm.addEventListener('submit', async (e) => {
+    //     e.preventDefault();
+    //     const formData = new FormData(uploadForm);
+    //     formData.append('action', 'upload_music');
         
-        try {
-            const response = await fetch('../actions/artistaction.php', {
-                method: 'POST',
-                body: formData
-            });
+    //     try {
+    //         const response = await fetch('../actions/artistaction.php', {
+    //             method: 'POST',
+    //             body: formData
+    //         });
             
-            const result = await response.json();
-            if (result.success) {
-                alert('Track uploaded successfully!');
-                location.reload();
-            } else {
-                alert('Upload failed: ' + result.message);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Upload failed. Please try again.');
-        }
-    });
+    //         const result = await response.json();
+    //         if (result.success) {
+    //             alert('Track uploaded successfully!');
+    //             location.reload();
+    //         } else {
+    //             alert('Upload failed: ' + result.message);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //         alert('Upload failed. Please try again.');
+    //     }
+    // });
 
     // Handle track deletion
     deleteButtons.forEach(button => {
@@ -69,3 +69,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.getElementById('uploadMusicForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+        const response = await fetch('../actions/artist_action.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        const text = await response.text(); // Get the raw response
+        console.log("Raw Response:", text); // Log the raw response to debug
+
+        const result = JSON.parse(text); // Parse it as JSON
+        if (result.success) {
+            alert(result.message);
+            location.reload();
+        } else {
+            alert('Upload failed: ' + result.message);
+            console.error('Error:', result.message);
+        }
+    } catch (error) {
+        console.error('An error occurred:', error);
+        alert('An unexpected error occurred. Check the console for details.');
+    }
+});
+
+

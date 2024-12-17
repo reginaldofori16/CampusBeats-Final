@@ -21,10 +21,10 @@
     </nav>
 
     <!-- Search Bar Section -->
-    <section class="search-section">
+    <!-- <section class="search-section">
         <input type="text" class="search-bar" placeholder="Search for music, artists, or albums...">
         <button class="search-btn">Search</button>
-    </section>
+    </section> -->
 
     <!-- Featured Music Section -->
     <section class="featured-music">
@@ -63,6 +63,28 @@
             </div>
         </div>
     </section>
+    <section class="search-section">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search for music, artists, or albums...">
+        <button id="searchBtn" class="search-btn">Search</button>
+    </section>
+
+    <!-- Display Search Results -->
+    <!-- <section id="searchResults" class="search-results">
+        <h2>Search Results</h2>
+        <div id="resultsContainer"></div>
+    </section> -->
+
+    <section class="search-results">
+        <h3>Search Results</h3>
+        <div class="results-container"></div>
+    </section>
+
+    
+
+
+    <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/search.js"></script>
+
 
 
     <!-- Footer -->

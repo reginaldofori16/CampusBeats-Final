@@ -1,18 +1,28 @@
+<!-- <?php
+// $servername = 'localhost';
+// $username = 'root';
+// $password = '';
+// $dbname = 'webtech_fall2024_reginald_ofori';
+
+// // MySQLi Connection
+// $conn = new mysqli($servername, $username, $password, $dbname);
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
+?> -->
+
+
 <?php
-    // Load environment variables from db.env
-    $env = parse_ini_file('db.env');
+$host = 'localhost';
+$db_name = 'webtech_fall2024_reginald_ofori';
+$db_user = 'reginald.ofori';
+// $db_password = '';
+$db_password = 'Reggie11.';
 
-    $servername = $env['DB_HOST'];
-    $username = $env['DB_USER'];
-    $password = $env['DB_PASSWORD'];
-    $dbname = $env['DB_NAME'];
+// Create MySQLi connection
+$conn = new mysqli($host, $db_user, $db_password, $db_name);
 
-    //Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    //Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
 ?>

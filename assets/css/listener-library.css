@@ -1,0 +1,161 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f1f1f1;
+}
+
+nav a.active {
+    color: #d0d0d0;
+}
+
+/* Main Content */
+main {
+    padding: 120px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.library-section {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 60px;
+}
+
+.library-category {
+    margin-bottom: 40px;
+}
+
+.library-category h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.music-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.item {
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Footer Section */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small Screens (Mobile) */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .library-section {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .music-items {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .item {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Large Screens (Tablets, Desktops) */
+@media (min-width: 768px) {
+    .item {
+        width: 200px;
+    }
+}

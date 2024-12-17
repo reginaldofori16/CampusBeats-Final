@@ -1,0 +1,214 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background for a vibrant feel */
+    color: #333;
+    min-height: 100vh; /* Ensure the body takes at least the height of the viewport */
+    padding-bottom: 80px; /* Adds extra space for the footer */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #ffffff; /* White navbar to keep it clean */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+    height: 40px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 30px;
+}
+
+.navbar ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Search Bar Section */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    color: #333;
+}
+
+.search-btn {
+    padding: 15px 20px;
+    background-color: #1db954;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #1ed760;
+}
+
+/* Featured Music Section */
+.featured-music {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.featured-music h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.featured-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.featured-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+
+.featured-item img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.featured-item:hover img {
+    transform: scale(1.05);
+}
+
+.featured-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Recently Played Section */
+.recently-played {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.recently-played h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.recent-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+    position: fixed; /* Fixes the footer to the bottom */
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for a floating effect */
+    z-index: 10; /* Ensure the footer is above other content */
+}
+
+/* Footer gap */
+.footer-gap {
+    height: 80px; /* Space between footer content and the main content */
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 80%;
+    }
+
+    .featured-container {
+        gap: 10px;
+    }
+
+    .featured-item {
+        width: 180px;
+    }
+
+    .recent-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 80%;
+    }
+}

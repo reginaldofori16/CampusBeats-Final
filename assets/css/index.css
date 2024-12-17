@@ -1,0 +1,215 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #333;
+    background: linear-gradient(180deg, #f9f9f9, #eaeaea);
+    scroll-behavior: smooth;
+    margin-top: 100px; /* Creates space to avoid overlap with the fixed header */
+}
+
+/* Header Section */
+header {
+    position: fixed; /* Makes the header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the header stays above other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.auth-buttons .btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background-color: transparent;
+    color: #333;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none; 
+    text-align: center;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background: url('logos_and_backgrounds/CampusBeats.jpg') no-repeat center center / cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Featured Schools Section */
+.featured-schools {
+    padding: 30px 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.featured-schools h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.school-slider {
+    overflow: hidden;
+    position: relative;
+}
+
+.school-logos {
+    display: flex;
+    gap: 20px;
+    animation: scroll 15s linear infinite;
+}
+
+.school-logos img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .auth-buttons {
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about h2 {
+        font-size: 1.5rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+    }
+
+    .school-logos img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+    }
+
+    .auth-buttons .btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .about h2 {
+        font-size: 1.2rem;
+    }
+
+    .about p {
+        font-size: 0.8rem;
+    }
+
+    .school-logos img {
+        width: 60px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
